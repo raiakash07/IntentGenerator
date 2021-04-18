@@ -13,9 +13,12 @@ public:
     bool checkWeatherCityIntentExists();
     bool findallOccuranceInSentence();
     bool findAnyOfCityOccurance();
+    bool findAnyOfDayAdverbsOccurance();
+    bool findAnyOccurance(const std::vector<std::string> &toMatch);
 private:
     //list of keywords
-    const std::vector <std::string> weatherCityKeywords{"weather", "today"};
+    const std::vector <std::string> weatherCityKeywords{"weather"};
+    const std::vector <std::string> dayAdverbs{"today","tomorrow","yesterday"};
     const std::vector <std::string> cityKeywords{"paris", "new york"};
     // to hold the questions
     const std::string &statement;

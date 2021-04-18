@@ -11,7 +11,7 @@ GetWeatherCityIntent::~GetWeatherCityIntent() {
 }
 
 bool GetWeatherCityIntent::checkWeatherCityIntentExists() {
-    return findallOccuranceInSentence() && findAnyOfCityOccurance();
+    return findallOccuranceInSentence() && findAnyOfCityOccurance() && findAnyOfDayAdverbsOccurance();
 }
 
 bool GetWeatherCityIntent::findallOccuranceInSentence() {
@@ -23,8 +23,16 @@ bool GetWeatherCityIntent::findallOccuranceInSentence() {
 }
 
 bool GetWeatherCityIntent::findAnyOfCityOccurance() {
-    for (const auto & cityKeyword : cityKeywords) {
-        if (statement.find(cityKeyword) != std::string::npos)
+    return findAnyOccurance(cityKeywords);
+}
+
+bool GetWeatherCityIntent::findAnyOfDayAdverbsOccurance() {
+    return findAnyOccurance(dayAdverbs);
+}
+
+bool GetWeatherCityIntent::findAnyOccurance(const std::vector<std::string>& toMatch) {
+    for (const auto & word : toMatch) {
+        if (statement.find(word) != std::string::npos)
             return true;
     }
     return false;

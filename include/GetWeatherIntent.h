@@ -12,8 +12,12 @@ public:
     bool isvalid() override;
     bool checkWeatherIntentExists();
     bool findalloccuranceInSentence();
+    bool findAnyOccurance(const std::vector<std::string>& toMatch);
+    bool findAnyOfDayAdverbsOccurance();
+
 private:
-    const std::vector <std::string> weatherKeywords{"weather", "today"};
+    const std::vector <std::string> weatherKeywords{"weather"};
+    const std::vector <std::string> dayAdverbs{"today","tomorrow","yesterday"};
     const std::string &statement;
 };
 
