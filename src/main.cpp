@@ -77,7 +77,6 @@ int main(int argc, char** argv) {
 
         std::cout << "\n\nPress Enter to continue and 'q' to exit\n";
         getline(std::cin, userOption);
-        system("cls || clear");
         if (userOption == "q")
             break;
     }
