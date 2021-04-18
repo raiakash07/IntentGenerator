@@ -39,7 +39,7 @@ void checkIfIdentExists(std::string &&statement) {
     getWeatherCityIntent->isvalid()
             ? toPrintOnScreen("Get Weather City") : getWeatherIntent->isvalid()
             ? toPrintOnScreen("Get Weather") : checkCalendarIntent->isvalid()
-            ? toPrintOnScreen("Check Calandar") : statement.find("fact") != std::string::npos
+            ? toPrintOnScreen("Check Calendar") : statement.find("fact") != std::string::npos
             ? toPrintOnScreen("Get Fact") : toPrintOnScreen("Intent not avaiable");
 }
 

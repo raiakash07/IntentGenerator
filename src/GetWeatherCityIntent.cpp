@@ -15,8 +15,8 @@ bool GetWeatherCityIntent::checkWeatherCityIntentExists() {
 }
 
 bool GetWeatherCityIntent::findallOccuranceInSentence() {
-    for(const auto & cityKeyword : cityKeywords) {
-        if (statement.find(cityKeyword) == std::string::npos)
+    for(const auto & weatherCityKeyword: weatherCityKeywords) {
+        if (statement.find(weatherCityKeyword) == std::string::npos)
             return false;
     }
     return true;
