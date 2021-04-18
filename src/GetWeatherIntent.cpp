@@ -12,8 +12,8 @@ bool GetWeatherIntent::checkWeatherIntentExists() {
 }
 
 bool GetWeatherIntent::findalloccuranceInSentence() {
-    for (int i = 0; i < weatherKeywords.size(); i++) {
-        if (statement.find(weatherKeywords[i]) == std::string::npos)
+    for(const auto &weatherKeyword : weatherKeywords) {
+        if (statement.find(weatherKeyword) == std::string::npos)
             return false;
 
     }
@@ -24,4 +24,3 @@ bool GetWeatherIntent::findalloccuranceInSentence() {
 bool GetWeatherIntent::isvalid() {
     return checkWeatherIntentExists();
 }
-

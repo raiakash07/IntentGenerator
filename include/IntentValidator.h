@@ -12,4 +12,3 @@ public:
 };
 
 #endif /* INDENT_H */
-
