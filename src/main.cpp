@@ -19,10 +19,12 @@ std::string getUserQuestion() {
 }
 
 void toPrintOnScreen(std::string words) {
+    
     std::cout << "Intent : " << words << "\n";
 }
 
 std::string& toLower(std::string &words) {
+    
     std::transform(words.begin(), words.end(), words.begin(), [](unsigned char c) {
         return std::tolower(c);
     });
